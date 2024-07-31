@@ -1,220 +1,411 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="css/zerogrid.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-2.1.1.js"></script>
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Home</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <style>
-        #blessings {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 20px;
-        }
-        .blessing {
-            width: 100%;
-            text-align: center;
-            font-size: 1.2em;
-            opacity: 0;
-            position: absolute;
-            animation: showBlessing 25s linear infinite;
-        }
-        .blessing:nth-child(1) { animation-delay: 0s; }
-        .blessing:nth-child(2) { animation-delay: 5s; }
-        .blessing:nth-child(3) { animation-delay: 10s; }
-        .blessing:nth-child(4) { animation-delay: 15s; }
-        .blessing:nth-child(5) { animation-delay: 20s; }
-        @keyframes showBlessing {
-            0%, 20% { opacity: 0; }
-            8%, 18% { opacity: 1; }
-        }
-        .blessings-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .blessings-form textarea {
-            width: 100%;
-            max-width: 600px;
-            height: 100px;
-            margin-bottom: 10px;
-            padding: 10px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .blessings-form button {
-            padding: 10px 20px;
-            font-size: 1em;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .button-link img {
-            width: 100px;
-            height: auto;
-        }
-        .music-button {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        #myCounter {
-            background: rgba(255, 255, 255, 0); /* 透明背景 */
-        }
-        .mb-comingsoon label {
-            background: rgba(255, 255, 255, 0) !important; /* 设置标签背景为透明 */
-            color: black !important; /* 设置标签文字颜色 */
-        }
-        .location-instagram {
-            display: flex;
-            justify-content: space-between;
-        }
-        .location-instagram a, .location-instagram p {
-            flex: 1;
-            text-align: center;
-            margin: 0 10px;
-        }
-    </style>
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
+	
+	<!-- Custom Fonts -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<script src="js/jquery-2.1.1.js"></script>
+
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+	
+	<style>
+		#blessings {
+			height: 200px;
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 20px;
+		}
+
+		.blessing {
+			width: 100%;
+			text-align: center;
+			font-size: 1.2em;
+			opacity: 0;
+			position: absolute;
+			animation: showBlessing 30s linear infinite;
+		}
+
+		.blessing:nth-child(1) { animation-delay: 0s; }
+		.blessing:nth-child(2) { animation-delay: 6s; }
+		.blessing:nth-child(3) { animation-delay: 12s; }
+		.blessing:nth-child(4) { animation-delay: 18s; }
+		.blessing:nth-child(5) { animation-delay: 24s; }
+
+		@keyframes showBlessing {
+			0%, 20% { opacity: 0; }
+			8%, 18% { opacity: 1; }
+		}
+
+		.blessings-form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+
+		.blessings-form textarea {
+			width: 100%;
+			max-width: 600px;
+			height: 100px;
+			margin-bottom: 10px;
+			padding: 10px;
+			font-size: 1em;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		.blessings-form button {
+			padding: 10px 20px;
+			font-size: 1em;
+			color: #fff;
+			background-color: #007BFF;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.button-link img {
+			width: 100px;
+			height: auto;
+		}
+
+		.music-button {
+			position: fixed;
+			top: 10px;
+			left: 10px;
+			background-color: #007BFF;
+			color: white;
+			border: none;
+			padding: 10px;
+			border-radius: 50%;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		#myCounter {
+			background: rgba(255, 255, 255, 0); /* 透明背景 */
+		}
+
+		.mb-comingsoon label {
+			background: rgba(255, 255, 255, 0) !important; /* 设置标签背景为透明 */
+			color: black !important; /* 设置标签文字颜色 */
+		}
+		
+		/* 添加以下部分以适应手机 */
+		@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+		.counter-group {display: inline-block;}
+
+		.counter-group:before,
+		.counter-group:after {
+			content: " ";
+			display: table;
+		}
+		.counter-group:after {
+			clear: both;
+		}
+		.counter-block {
+			float: left;
+			margin-right: 20px;
+		}
+		.counter-block .counter {
+			position: relative;
+			width: 210px;
+			height: 130px;
+			overflow: hidden;
+		}
+		.counter-block .counter .number {
+			padding: 2%;
+			width: 48%;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0);
+			color: #333333;
+			position: absolute;
+			font-size: 100px;
+			line-height: 130px;
+			top: -10000px;
+		}
+		.counter-block .counter .number.tens {
+			left: 0;
+		}
+		.counter-block .counter .number.units {
+			left: 50%;
+		}
+		.counter-block .counter .number.hundreds {
+			display: none;
+		}
+		.counter-block .counter .number.show {
+			top: 0;
+			z-index: 2;
+		}
+		.counter-block .counter .number.hidden-down {
+			top: 100%;
+		}
+		.counter-block .counter .number.hidden-up {
+			top: -100%;
+			z-index: 100;
+		}
+		.counter-block .counter.with-hundreds {
+			width: 300px;
+		}
+		.counter-block .counter.with-hundreds .number {
+			width: 30.66%;
+		}
+		.counter-block .counter.with-hundreds .number.tens {
+			left: 33.33%;
+		}
+		.counter-block .counter.with-hundreds .number.units {
+			left: 66.66%;
+		}
+		.counter-block .counter.with-hundreds .number.hundreds {
+			display: block;
+			left: 0;
+		}
+		.counter-block .counter-caption {
+			font-size: 150%;
+			margin-top: 10px;
+		}
+		@media (max-width: 992px) {
+			.counter-group {
+				margin: 10px auto;
+			}
+			.counter-block {
+				margin-right: 10px;
+			}
+			.counter-block .counter {
+				width: 120px;
+				height: 90px;
+				overflow: hidden;
+				font-weight: 700;
+			}
+			.counter-block .counter .number {
+				font-size: 108px;
+				line-height: 90px;
+			}
+			.counter-block .counter.with-hundreds {
+				width: 180px;
+			}
+			.counter-block .counter-caption {
+				font-size: 100%;
+			}
+		}
+		@media (max-width: 768px) {
+			.counter-group {
+				margin: 0 auto;
+			}
+			.counter-block {
+				margin-right: 8px;
+			}
+			.counter-block .counter {
+				width: 96px;
+				height: 80px;
+			}
+			.counter-block .counter .number {
+				font-size: 86px;
+				line-height: 72px;
+			}
+			.counter-block .counter.with-hundreds {
+				width: 144px;
+			}
+			.counter-block .counter-caption {
+				font-size: 85%;
+			}
+		}
+		@media (max-width: 480px) {
+			.counter-group {
+				margin: 0 20px;
+			}
+			.counter-block .counter {
+				width: 70px;
+				height: 50px;
+			}
+			.counter-block .counter .number {
+				font-size: 55px;
+				line-height: 50px;
+			}
+			.counter-block .counter.with-hundreds {
+				width: 92px;
+			}
+			.counter-block .counter-caption {
+				font-size: 70%;
+			}
+		}
+
+		.location-instagram {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.location-instagram a, .location-instagram p {
+			flex: 1;
+			text-align: center;
+			margin: 0 10px;
+		}
+	</style>
+    
 </head>
 <body>
 <div class="wrap-body">
-<header>
-    <div class="wrap-header">
-        <div class="main-header">
-            <div class="zerogrid">
-                <h1>The Wedding Event</h1>
-                <div class="counter">
-                    <div class="centered text-center" id="myCounter"></div>
-                </div>
-                <!-- Music Player -->
-                <audio id="backgroundMusic" src="toi.mp3" type="audio/mpeg" loop></audio>
-                <button class="music-button" onclick="toggleMusic()">&#127925;</button>
-            </div>
-        </div>
-    </div>
+
+<!--////////////////////////////////////Header-->
+<header >
+	<div class="wrap-header">
+		<div class="main-header">
+			<div class="zerogrid">
+				<h1>The Wedding Event</h1>
+				<div class="counter">
+					<div class="centered text-center" id="myCounter"></div>
+				</div>
+				<!-- Music Player -->
+				<audio id="backgroundMusic" src="toi.mp3" type="audio/mpeg" loop></audio>
+				<button class="music-button" onclick="toggleMusic()">&#127925;</button>
+			</div>
+		</div>
+	</div>
 </header>
 
+<!--////////////////////////////////////Container-->
 <section id="container">
-    <div class="wrap-container">
-        <section class="content-box boxstyle-1 box-1">
-            <div class="zerogrid">
-                <div class="row wrap-box">
-                    <div class="col-full">
-                        <div class="wrap-col">
-                            <h1>You're Invited!</h1>
-                            <p>We are thrilled to invite you to our wedding celebration! Join us as we exchange vows and celebrate our love with family and friends.</p>
-                            <p><strong>Date:</strong> August 8, 2024</p>
-                            <p><strong>Time:</strong> 6:00 PM</p>
-                            <p><strong>Venue:</strong> Gulshan Hall, 60 Grant Ave. Carteret NJ 0708</p>
-                            <p>We look forward to sharing this special day with you!</p>
-                            <p>With love,<br>[Bride's Name] & [Groom's Name]</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+	<div class="wrap-container">
+		<!-----------------content-box-1-------------------->
+		<section class="content-box boxstyle-1 box-1">
+			<div class="zerogrid">
+				<div class="row wrap-box"><!--Start Box-->
+					<div class="col-full">
+						<div class="wrap-col">
+							<h1>You're Invited!</h1>
+							<p>We are thrilled to invite you to our wedding celebration! Join us as we exchange vows and celebrate our love with family and friends.</p>
+							<p><strong>Date:</strong> August 8, 2024</p>
+							<p><strong>Time:</strong> 6:00 PM</p>
+							<p><strong>Venue:</strong> Gulshan Hall, 60 Grant Ave. Carteret NJ 0708</p>
+							<p>We look forward to sharing this special day with you!</p>
+							<p>With love,<br>[Bride's Name] & [Groom's Name]</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-        <section class="content-box boxstyle-2 box-2">
-            <div class="zerogrid" style="width: 100%;">
-                <div class="row wrap-box">
-                    <div class="header">
-                        <div class="wrapper">
-                            <h2 class="color-yellow">Guest Blessings</h2>
-                            <hr class="line">
-                            <div class="intro">We are honored to receive your warm wishes!</div>
-                        </div>
-                    </div>
-                    <div id="blessings">
+		<!-----------------content-box-2-------------------->
+		<section class="content-box boxstyle-2 box-2">
+			<div class="zerogrid" style="width: 100%;">
+				<div class="row wrap-box"><!--Start Box-->
+					<div class="header">
+						<div class="wrapper">
+							<h2 class="color-yellow">Guest Blessings</h2>
+							<hr class="line">
+							<div class="intro">We are honored to receive your warm wishes!</div>
+						</div>
+					</div>
+					<div id="blessings">
                         <div class="blessing">Көтерген шаңырақтарың биік, босағаларың берік болсын!</div>
                         <div class="blessing">Махаббаттарың баянды болсын!</div>
                         <div class="blessing">Босағаларың берік, керегелерің кең болсын!</div>
                         <div class="blessing">Шын жүректен махаббатты мәңгіге сақтауларыңызды тілейміз!</div>
                         <div class="blessing">Жас-жұбайлар бүгінгі заңды некелерің құтты болсын!</div>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="content-box boxstyle-1 box-6">
-            <div class="zerogrid">
-                <div class="row wrap-box">
-                    <div class="header">
-                        <div class="wrapper">
-                            <h2 class="color-yellow">LOCATION</h2>
-                            <hr class="line">
-                            <div class="intro">Lorem ipsum dolor sit amet</div>
-                        </div>
-                    </div>
-                    <div class="row location-instagram">
-                        <div class="col-1-3">
-                            <div class="wrap-col">
-                                <a href="https://go.2gis.com/tk96q" class="button-link" target="_blank"><img src="location.png" alt="Location"></a>
-                                <p>The wedding party will begin @ <span>14:00 P.M</span> on <span>Monday July 23, 2015</span> . Free drinks and music is on the way, no costume is needed.</p>
-                            </div>
-                        </div>
-                        <div class="col-1-3">
-                            <div class="wrap-col">
-                                <a href="https://www.instagram.com/manargrandhall/" class="button-link" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-                                <p>Gulshan Hall, 60 Grant Ave. Carteret NJ 0708 (732) 803-01 03, (732) 806-01 04 info@emailname.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-full">
-                            <div class="wrap-col">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1453.0839160934347!2d76.82504184604927!3d43.247904252289494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-CN!2skz!4v1722439588181!5m2!1szh-CN!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+					<div class="blessings-form">
+						<textarea id="blessingInput" placeholder="Write your blessing here..."></textarea>
+						<button onclick="addBlessing()">Submit Blessing</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-----------------content-box-6-------------------->
+		<section class="content-box boxstyle-1 box-6">
+			<div class="zerogrid">
+				<div class="row wrap-box"><!--Start Box-->
+					<div class="header">
+						<div class="wrapper">
+							<h2 class="color-yellow">LOCATION</h2>
+							<hr class="line">
+							<div class="intro">Lorem ipsum dolor sit amet</div>
+						</div>
+					</div>
+					<div class="row location-instagram">
+						<div class="col-1-3">
+							<div class="wrap-col">
+								<a href="https://go.2gis.com/tk96q" class="button-link" target="_blank"><img src="location.png" alt="Location"></a>
+								<p>The wedding party will begin @ <span>14:00 P.M</span> on <span>Monday July 23, 2015</span> . Free drinks and music is on the way, no costume is needed.</p>
+							</div>
+						</div>
+						<div class="col-1-3">
+							<div class="wrap-col">
+								<a href="https://www.instagram.com/manargrandhall/" class="button-link" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+								<p>Gulshan Hall, 60 Grant Ave. Carteret NJ 0708 (732) 803-01 03, (732) 806-01 04 info@emailname.com</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-full">
+							<div class="wrap-col">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1453.0839160934347!2d76.82504184604927!3d43.247904252289494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-CN!2skz!4v1722439588181!5m2!1szh-CN!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 </section>
 
+<!--////////////////////////////////////Footer-->
 <footer>
-    <div class="wrap-footer">
-        <div class="zerogrid">
-            <div class="row">
-                <h3>Contact</h3>
-                <span>Phone / +80 999 99 9999 </span></br>
-                <span>Email / info@domain.com  </span></br>
-                <span>Studio / Moonshine St. 14/05 Light City </span></br>
-                <span>Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></span>
-            </div>
-        </div>
-    </div>
+	<div class="wrap-footer">
+		<div class="zerogrid">
+			<div class="row">
+				<h3>Contact</h3>
+				<span>Phone / +80 999 99 9999 </span></br>
+				<span>Email / info@domain.com  </span></br>
+				<span>Studio / Moonshine St. 14/05 Light City </span></br>
+				<span>Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></span>
+			</div>
+		</div>
+	</div>
 </footer>
-    
-    <!-- Google Map -->
-    <script>
-        $('.maps').click(function () {
-        $('.maps iframe').css("pointer-events", "auto");
-    });
+	
+	<!-- Google Map -->
+	<script>
+		$('.maps').click(function () {
+		$('.maps iframe').css("pointer-events", "auto");
+	});
 
-    $( ".maps" ).mouseleave(function() {
-      $('.maps iframe').css("pointer-events", "none"); 
-    });
-    </script>
-    
-    <!-- Countdown -->
+	$( ".maps" ).mouseleave(function() {
+	  $('.maps iframe').css("pointer-events", "none"); 
+	});
+	</script>
+	
+	<!-- Countdown -->
     <script src="js/jquery.mb-comingsoon.min.js"></script>
     <script type="text/javascript">
         $(function () {
@@ -224,33 +415,67 @@
             }, 200);
         });
     </script>
-    
-    <!-- Blessings -->
-    <script>
-        function toggleMusic() {
-            const music = document.getElementById('backgroundMusic');
-            if (music.paused) {
-                music.play();
-            } else {
-                music.pause();
-            }
-        }
+	
+	<!-- Blessings -->
+	<script>
+		const blessings = JSON.parse(localStorage.getItem('blessings')) || [
+            "Көтерген шаңырақтарың биік, босағаларың берік болсын!",
+            "Махаббаттарың баянды болсын!",
+            "Босағаларың берік, керегелерің кең болсын!",
+            "Шын жүректен махаббатты мәңгіге сақтауларыңызды тілейміз!",
+            "Жас-жұбайлар бүгінгі заңды некелерің құтты болсын!"
+        ];
 
-        document.addEventListener('DOMContentLoaded', (event) => {
-            // Automatically toggle sound on page load
-            function toggleSound() {
-                var music = document.getElementById('backgroundMusic');
-                if (music.paused) {
-                    music.play().then(() => {
-                        music.muted = false; // Unmute if it was muted
-                    }).catch(error => {
-                        console.log("Auto-play was prevented. Click the button to play music.");
-                    });
-                }
-            }
-            setInterval(toggleSound, 100);
-        });
-    </script>
+		function addBlessing() {
+			const blessingInput = document.getElementById('blessingInput').value;
+			if (blessingInput.trim() !== "") {
+				blessings.push(blessingInput);
+				if (blessings.length > 10) {
+					blessings.shift();
+				}
+				updateBlessings();
+				localStorage.setItem('blessings', JSON.stringify(blessings));
+				document.getElementById('blessingInput').value = "";
+			}
+		}
+
+		function updateBlessings() {
+			const blessingsDiv = document.getElementById('blessings');
+			blessingsDiv.innerHTML = '';
+			blessings.forEach((blessing, index) => {
+				const blessingElement = document.createElement('div');
+				blessingElement.classList.add('blessing');
+				blessingElement.style.animationDelay = `${index * 6}s`;
+				blessingElement.textContent = blessing;
+				blessingsDiv.appendChild(blessingElement);
+			});
+		}
+
+		function toggleMusic() {
+			const music = document.getElementById('backgroundMusic');
+			if (music.paused) {
+				music.play();
+			} else {
+				music.pause();
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', (event) => {
+			updateBlessings();
+			// Automatically toggle sound on page load
+			function toggleSound() {
+				var music = document.getElementById('backgroundMusic');
+				if (music.paused) {
+					music.play().then(() => {
+						music.muted = false; // Unmute if it was muted
+					}).catch(error => {
+						console.log("Auto-play was prevented. Click the button to play music.");
+					});
+				}
+			}
+			setInterval(toggleSound, 100);
+		});
+	</script>
 
 </div>
 </body>
